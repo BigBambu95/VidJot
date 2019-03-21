@@ -1,0 +1,20 @@
+<div class="col-sm-6 m-auto">
+{{#each ideas}}
+  <div class="card card-body mb-3">
+    <h4>{{title}}</h4>
+    <p>{{details}}</p>
+    <a class="btn btn-dark btn-block mb-2" href="/ideas/edit/{{id}}">Изменить</a>
+    <form action="/ideas/{{id}}?_method=DELETE" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="hidden" name="title" value="{{title}}">
+      <input type="submit" class="btn btn-danger btn-block" value="Удалить">
+    </form>
+  </div>
+{{else}}
+  <div class="text-center">
+    <h4>Список ваших видео идей пуст</h4>
+    <p>Самое время добавить очередную идею</p>
+    <a href="/ideas/add" class="btn btn-primary">Добавить</a>
+  </div>
+{{/each}}
+</div>

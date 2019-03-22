@@ -1,13 +1,13 @@
 <div class="col-sm-6 m-auto">
 {{#each ideas}}
-  <div class="card card-body mb-3">
-    <h4>{{title}}</h4>
-    <p>{{details}}</p>
-    <a class="btn btn-dark btn-block mb-2" href="/ideas/edit/{{id}}">Изменить</a>
-    <form action="/ideas/{{id}}?_method=DELETE" method="post">
+  <div class="card card-body mb-3 video-idea">
+    <h4 class="card-title">{{title}}</h4>
+    <p class="card-text">{{details}}</p>
+    <a class="btn mb-2 edit-btn" href="/ideas/edit/{{id}}"><i class="fas fa-edit"></i></a>
+    <form class="delete-btn" action="/ideas/{{id}}?_method=DELETE" method="post">
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="title" value="{{title}}">
-      <input type="submit" class="btn btn-danger btn-block" value="Удалить">
+      <button type="submit" class="btn"><i class="fas fa-trash"></i></button>
     </form>
   </div>
 {{else}}
